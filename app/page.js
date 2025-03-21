@@ -1,9 +1,6 @@
 'use client'
 
-import Image from "next/image";
-
 import React from "react"
-
 import { useState } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
@@ -73,21 +70,21 @@ export default function Home() {
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  async function handleRun(files) {
+  async function handleRun(content) {
 
     console.log("Files upload, running plugin...")
     setLoading(true);
 
-    const formData = new FormData();
-    files.forEach((file) => formData.append("files", file));
-
     const response = await fetch('/api/analyze', {
       method: 'POST',
-      body: formData,
+      body: content,
     });
 
     const data = await response.json();
+    console.log(data);
+
     setSuggestions(data.suggestions);
+    console.log(data.suggestions)
     setLoading(false);
   }
 
@@ -95,15 +92,15 @@ export default function Home() {
     <main className="flex min-h-screen flex-col md:flex-row">
       {/* Left section - Drop area */}
       <div className="w-1/2 p-5 border">
-        <h2>Upload Your Code Files</h2>
+        <h2 className="text-xl font-bold " >Upload Your Code Files</h2>
+        <h2 className="text-xs font-normal text-slate-500 pb-3 pt-1 " >Make your all accessible</h2>
         <FileDropZone onFilesUploaded={handleRun} />
       </div>
 
       {/* Right section - Code recommendations */}
-      <div className="flex flex-col w-full md:w-1/2 bg-gray-100 p-8">
+      {/* <div className="flex flex-col w-full md:w-1/2 bg-gray-100 p-8">
         <h2 className="text-xl font-semibold mb-6">Recommended Improvements :</h2>
 
-        {/* First file */}
         <p className="text-sm text-gray-600 mb-2">app/main.jsx</p>
         <Card className="mb-6 overflow-hidden">
           <SyntaxHighlighter language="jsx" style={atomDark} customStyle={{ margin: 0, borderRadius: 0 }}>
@@ -111,7 +108,6 @@ export default function Home() {
           </SyntaxHighlighter>
         </Card>
 
-        {/* Second file */}
         <p className="text-sm text-gray-600 mb-2">app/layout.jsx</p>
         <Card className="mb-6 overflow-hidden">
           <SyntaxHighlighter language="jsx" style={atomDark} customStyle={{ margin: 0, borderRadius: 0 }}>
@@ -119,8 +115,19 @@ export default function Home() {
           </SyntaxHighlighter>
         </Card>
 
-        {/* Run button */}
         <Button className="mt-auto w-full bg-gray-800 hover:bg-gray-700 text-white">Run Plugin</Button>
+      </div> */}
+       <div className="w-1/2 p-5 border">
+        <h2>Code Suggestions</h2>
+        {loading ? <p>Processing...</p> : (
+          <Card className="mb-6 overflow-hidden">
+            <SyntaxHighlighter language="html" style={atomDark} customStyle={{ margin: 0, borderRadius: 0 }}>
+              {/* {sampleCode["app/layout.jsx"]} */}
+              {/* <pre>{JSON.stringify(suggestions, null, 2)}</pre>  */}
+              {suggestions}
+            </SyntaxHighlighter>
+          </Card>
+        )}
       </div>
     </main>
   );
