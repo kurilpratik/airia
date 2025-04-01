@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## AiRIA - AI for ARIA Web Accessibility
 
-## Getting Started
+This project acts as a tool that takes care of everything ARIA, web accessibility using LLM powered code. It helps users with disabilities to access websites comfortably by finetuning the screen reader as per the content, making the internet and inclusive space.
 
-First, run the development server:
+> This project was developed at Hack For Impact, 2025 @ IIIT Delhi.
+
+### How this works?
+
+1. Scans the source code
+2. Identifies the context of code
+3. Modifes the code to fit ARIA standards
+
+### Why this matters?
+
+- Legal compliance: Ensures WCAG 2.1 and ADA compliance
+- Wider Audience: Improves accessibility for users with disabilities
+- Developer Productivity: Automates best practices and saves time
+- Innovation: Uses AI for meaningful impact in web development
+
+### Key Features
+
+- [x] Code Scanning
+- [x] Automated AI Fixes
+- [ ] IDE integration
+- [ ] Reports and Analytics
+
+### Getting Started
 
 ```bash
+git clone
+# or
+cd airia
+# or
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result and to test it out.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Nextjs
+- OpenRouter
+- deepseek-r1-distill-llama-70b model
+- Tailwind
+- React Dropzone
+- React Syntax Highlighter
 
-## Learn More
+### Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+Landing Page
+![Landing Page](/public/img-landing.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dashboard
+![Dashboard](/public/img-dashboard.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Code Suggestions
+![Code Suggestions](/public/img-suggestion.png)
 
-## Deploy on Vercel
+### Scope of Work
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add IDE integration
+- Media context awareness
+- Chrome extension that scans website & adds ARIA modification on the go
+- Summarize and directions
+- Voice chat with website
