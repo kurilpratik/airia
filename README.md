@@ -4,6 +4,22 @@ This project acts as a tool that takes care of everything ARIA, web accessibilit
 
 > This project was developed at Hack For Impact, 2025 @ IIIT Delhi.
 
+Landing Page
+![Landing Page](/public/img-landing.png)
+
+Dashboard
+![Dashboard](/public/img-dashboard.png)
+
+Code Suggestions
+![Code Suggestions](/public/img-suggestion.png)
+
+### Key Features
+
+- [x] 🚀 Code Scanning
+- [x] 🚀 Automated AI Fixes
+- [ ] 🚀 IDE integration
+- [ ] 🚀 Reports and Analytics
+
 ### How this works?
 
 1. Scans the source code
@@ -17,20 +33,13 @@ This project acts as a tool that takes care of everything ARIA, web accessibilit
 - Developer Productivity: Automates best practices and saves time
 - Innovation: Uses AI for meaningful impact in web development
 
-### Key Features
-
-- [x] Code Scanning
-- [x] Automated AI Fixes
-- [ ] IDE integration
-- [ ] Reports and Analytics
-
 ### Getting Started
 
 ```bash
 git clone
-# or
+
 cd airia
-# or
+
 npm run dev
 ```
 
@@ -44,17 +53,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Tailwind
 - React Dropzone
 - React Syntax Highlighter
-
-### Screenshots
-
-Landing Page
-![Landing Page](/public/img-landing.png)
-
-Dashboard
-![Dashboard](/public/img-dashboard.png)
-
-Code Suggestions
-![Code Suggestions](/public/img-suggestion.png)
 
 ### Scope of Work
 
